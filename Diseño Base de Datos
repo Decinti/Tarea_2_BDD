@@ -1,0 +1,42 @@
+### **Entidades Principales y Sus Atributos:**
+
+1. **Habitaciones**:
+    - **id_habitacion** (Clave primaria)
+    - **tipo** (single, double, king)
+    - **precio_por_noche**
+2. **Huéspedes**:
+    - **rut** (Clave primaria, primeros 8 dígitos)
+    - **nombre**
+    - **apellido**
+    - **email**
+    - **telefono**
+3. **Reservas**:
+    - **id_reserva** (Clave primaria)
+    - **rut_huesped** (Clave foránea relacionada con Huéspedes)
+    - **id_habitacion** (Clave foránea relacionada con Habitaciones)
+    - **fecha_checkin**
+    - **fecha_checkout**
+    - **estado** (activa, cancelada, completada)
+4. **Tours**:
+    - **id_tour** (Clave primaria)
+    - **nombre**
+    - **fecha**
+    - **lugar**
+    - **medio_transporte**
+    - **precio**
+5. **Reservas_Tours**:
+    - **id_reserva_tour** (Clave primaria)
+    - **id_reserva** (Clave foránea relacionada con Reservas)
+    - **id_tour** (Clave foránea relacionada con Tours)
+6. **Checkouts**:
+    - **id_checkout** (Clave primaria)
+    - **id_reserva** (Clave foránea relacionada con Reservas)
+    - **fecha_real_checkout**
+    - **total_pagado**
+    - **calificacion_habitacion**
+
+### **Relaciones:**
+
+- Cada habitación puede estar en múltiples reservas, pero cada reserva se refiere a una sola habitación.
+- Los huéspedes pueden tener múltiples reservas.
+- Una reserva puede incluir varios tours, y un tour puede estar en varias reservas.
